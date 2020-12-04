@@ -64,7 +64,7 @@
                            <!-- button section -->
                            <ul class="login">
                               <li class="login-modal">
-                                 <a href="#" class="login"><i class="fa fa-user"></i>Đăng ký</a>
+                                 <a href="register.php" class="register"><i class="fa fa-user"></i>Đăng ký</a>
                               </li>
                               <!-- <li>
                                  <div class="cart-option">

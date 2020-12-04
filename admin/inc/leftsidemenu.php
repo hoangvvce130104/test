@@ -33,23 +33,20 @@
                     <li><a href="clbList.php"> Quản lý câu lạc bộ </a></li>
                     <li><a href="clbNew.php"> Quản lý tin tức </a></li>
                 </ul>
+            </li>
                 
 
-                <!-- <li>
-                    <a href="javascript: void(0);" class="waves-effect waves-light">
-                        <i class="mdi mdi-layers"></i>
-                        <span>  Admin UI </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="admin-sweet-alert2.html">Sweet Alert 2</a></li>
-                        <li><a href="admin-widgets.html">Widgets</a></li>
-                        <li><a href="admin-nestable.html">Nestable List</a></li>
-                        <li><a href="admin-rangeslider.html">Range Slider</a></li>
-                        <li><a href="admin-ratings.html">Ratings</a></li>
-                        <li><a href="admin-animation.html">Animation</a></li>
-                    </ul>
-                </li> -->
+            <li>
+                <a href="javascript: void(0);" class="waves-effect waves-light">
+                    <i class="mdi mdi-layers"></i>
+                    <span>  Admin UI </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li><a href="#">Quản lý thành viên</a></li>
+                    <li><a href="#">Quản lý sinh viên</a></li>
+                </ul>
+            </li>
 
                 <!-- <li>
                     <a href="calendar.html" class="waves-effect waves-light">
@@ -248,7 +245,7 @@
                 </li> -->
 
         </ul>
-
+        <!-- metismenu -->
     </div>
     <!-- End Sidebar -->
 

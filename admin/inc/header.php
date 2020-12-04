@@ -36,7 +36,6 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-            
             <!-- Topbar Start -->
             <div class="navbar-custom">
                 <ul class="list-unstyled topnav-menu float-right mb-0">
