@@ -71,7 +71,7 @@
       $stmt->bindParam(':clb',$array["clb"]);
       $stmt->bindParam(':reason', $array["reason"]);
       $stmt->bindParam(':sta', $array["sta"]);
-      $stmt->execute();
+      $stmt->execute();   
       return "true";
   }
   
@@ -115,7 +115,7 @@
       
     public function changeStatusStudent($id,$status)
     {
-        return $this->update("UPDATE `student` SET `status`= $status WHERE `sudentID` = $id");
+        return $this->update("UPDATE `student` SET `status`= $status WHERE `studentID` = $id");
     }
   }
 

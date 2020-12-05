@@ -39,12 +39,12 @@
             <li>
                 <a href="javascript: void(0);" class="waves-effect waves-light">
                     <i class="mdi mdi-layers"></i>
-                    <span>  Admin UI </span>
+                    <span>  Quản lý </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li><a href="#">Quản lý thành viên</a></li>
-                    <li><a href="#">Quản lý sinh viên</a></li>
+                    <li><a href="acceptStudent.php">Quản lý sinh viên</a></li>
                 </ul>
             </li>
 

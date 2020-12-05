@@ -28,18 +28,14 @@
                 </div>
             </div>
             <div class="row">
-                            <div class="col-sm-12">
+                            <div class="col-sm-11">
                                 <div class="card-box">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="demo-box">
                                                 <h4 class="header-title"> Danh sách </h4>
-                                                <p class="sub-header">
-                                                    <a href="clbAdd.php">Thêm câu lạc bộ</a>
-                                                </p>
-
                                                 <div class="table-responsive">
-                                                    <table class="table table-bordered col-sm-12 col-md-12">
+                                                    <table class="table table-default col-sm-12 ">
                                                         <thead>
                                                         <?php
                                                             if(isset($delClb)){
@@ -70,8 +66,15 @@
                                                                 <td><?php echo $result['quantity']?></td>
                                                                 <td><?php echo $result['create_at']?></td>
                                                                 <td>
-                                                                    <a href="clbEdit.php?clbId=<?php echo $result['clb_id'] ?>">Sửa</a> |
-                                                                    <a onclick="return confirm('Bạn có muốn xoá danh mục này không?')" href="?delId=<?php echo $result['clb_id'] ?>">Xoá</a>
+                                                                <a href="clbEdit.php?clbId=<?php echo $result['clb_id'] ?>">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </a> |
+                                                                <a onclick="return confirm('Bạn có muốn xoá danh mục này không?')" href="?delId=<?php echo $result['clb_id'] ?>">
+                                                                    <i class="fas fa-trash-alt"></i>
+                                                                </a> |
+                                                                <a href="catAdd.php">
+                                                                    <i class="fas fa-plus-square"></i>
+                                                                </a>
                                                                 </td>
                                                             </tr>
                                                             <?php
