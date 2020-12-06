@@ -21,6 +21,7 @@
       return false;
     }
   }
+
   public function connectionDB()
   {
     try {
@@ -29,12 +30,11 @@
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       echo "Kết nối thành công";
       return $conn;
-} catch(PDOException $e) {
-      echo "Kết nối thất bại" . $e->getMessage();
-}
+  } catch(PDOException $e) {
+        echo "Kết nối thất bại" . $e->getMessage();
+  }
   }
   
-
   public function selectdata($query){
     $result = $this->link->query($query) or 
     die($this->link->error.__LINE__);

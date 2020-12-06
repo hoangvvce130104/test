@@ -37,19 +37,19 @@
                                         echo $insertCat;
                                     }
                                 ?>
-                                    <form id="basic-form" action="catAdd.php" method="POST">
+                                    <form id="basic-form" action="catAdd.php" method="POST" enctype="multipart/form-data">
                                         <div>
                                             <h3></h3>
                                             <section>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="catName">Tên danh mục *</label>
+                                                    <label class="col-lg-2 control-label " for="catName">Tên danh mục </label>
                                                     <div class="col-lg-10">
                                                         <input class="form-control required" name="catName" type="text" placeholder="Thêm danh mục...">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="content">Nội dung *</label>
+                                                    <label class="col-lg-2 control-label " for="content">Nội dung </label>
                                                     <div class="col-lg-10">
                                                         <input class="form-control required" name="content" type="text" placeholder="Nhập nội dung...">
                                                     </div>

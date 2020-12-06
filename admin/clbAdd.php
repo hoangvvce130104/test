@@ -1,6 +1,7 @@
 <?php include './inc/header.php';?>
 <?php include './inc/leftsidemenu.php';?>
 <?php include '../models/club.php';?>
+
 <?php
     $clb = new club();
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -37,7 +38,7 @@
                                         echo $insertClb;
                                     }
                                 ?>
-                                    <form id="basic-form" action="clbAdd.php" method="POST">
+                                    <form id="basic-form" action="clbAdd.php" method="POST" enctype="multipart/form-data">
                                         <div>
                                             <h3></h3>
                                             <section>
@@ -49,16 +50,36 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="quantity">Số lượng *</label>
+                                                    <label class="col-lg-2 control-label " for="quantity">Số lượng</label>
                                                     <div class="col-lg-10">
                                                         <input class="form-control required" name="quantity" type="number">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="img">Ảnh *</label>
+                                                    <label class="col-lg-2 control-label " for="img">Ảnh</label>
                                                     <div class="col-lg-10">
-                                                        <input class="form-control required" name="img" type="file">
+                                                        <input class="form-control required" name="img" data-height="300" type="file">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-2 control-label " for="content">Danh mục</label>
+                                                    <div class="col-lg-10">
+                                                        <select class="browser-default custom-select" id="select" name="category">
+                                                            <option>Chọn danh mục</option>
+                                                            <?php
+                                                                $cat = new category();
+                                                                $catlist = $cat->show_category();
+                                                                if($catlist){
+                                                                    while($result = $catlist->fetch_assoc()){
+                                                            ?>
+                                                                <option value="<?php echo $result['catId']?>"><?php echo $result['catName']?></option>
+                                                            <?php
+                                                            }
+                                                            }
+                                                            ?>
+                                                        </select>
                                                     </div>
                                                 </div>
 

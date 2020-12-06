@@ -35,6 +35,7 @@
                                             <div class="demo-box">
                                                 <h4 class="header-title"> Danh sách </h4>
                                                 <div class="table-responsive">
+                                                    <form action="" method="POST" enctype="multipart/form-data">
                                                     <table class="table table-default col-sm-12 ">
                                                         <thead>
                                                         <?php
@@ -48,6 +49,7 @@
                                                                 <th>Ảnh</th>
                                                                 <th>Số lượng</th>
                                                                 <th>Ngày thành lập</th>
+                                                                <th>Danh mục</th>
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
@@ -65,6 +67,7 @@
                                                                 <td><?php echo $result['img']?></td>
                                                                 <td><?php echo $result['quantity']?></td>
                                                                 <td><?php echo $result['create_at']?></td>
+                                                                <td><?php echo $result['category_id']?></td>
                                                                 <td>
                                                                 <a href="clbEdit.php?clbId=<?php echo $result['clb_id'] ?>">
                                                                     <i class="fas fa-edit"></i>
@@ -83,6 +86,7 @@
 						                                    ?>
                                                         </tbody>
                                                     </table>
+                                                    </form>
                                                 </div>
                                             </div>
 

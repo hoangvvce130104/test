@@ -61,14 +61,24 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-2 control-label "> Số lượng </label>
                                                     <div class="col-lg-10">
-                                                        <input type="number" class="dropify" name="quantity" data-height="300" value="<?php echo $result['quantity'] ?>">
+                                                        <input type="number" class="form-control required" name="quantity" data-height="300" value="<?php echo $result['quantity'] ?>">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row">
                                                     <label class="col-lg-2 control-label "> Hình ảnh </label>
                                                     <div class="col-lg-10">
-                                                        <input type="file" class="dropify" name="img" data-height="300" value="<?php echo $result['img'] ?>">
+                                                        <input type="file" class="form-control required" name="img" data-height="300" value="<?php echo $result['img'] ?>">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-2 control-label " for="content">Danh mục </label>
+                                                    <div class="col-lg-10">
+                                                        <select class="browser-default custom-select">
+                                                            <option>Chọn danh mục</option>
+                                                            <option value="1">Danh mục 1</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 

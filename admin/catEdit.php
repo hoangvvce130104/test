@@ -47,7 +47,7 @@
                                     if($get_cate_name){
                                         while($result = $get_cate_name->fetch_assoc()){
                                 ?>
-                                    <form id="basic-form" action="" method="POST">
+                                    <form id="basic-form" action="" method="POST" enctype="multipart/form-data">
                                         <div>
                                             <h3></h3>
                                             <section>

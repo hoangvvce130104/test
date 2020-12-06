@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+        
             <div class="row">
                             <div class="col-sm-11">
                                 <div class="card-box">
@@ -35,6 +36,7 @@
                                             <div class="demo-box">
                                                 <h4 class="header-title"> Danh sách </h4>
                                                 <div class="table-responsive">
+                                                    <form action="" method="POST">
                                                     <table class="table table-default col-sm-12">
                                                         <thead>
                                                         <?php
@@ -79,6 +81,7 @@
 						                                    ?>
                                                         </tbody>
                                                     </table>
+                                                    </form>
                                                 </div>
                                             </div>
 
