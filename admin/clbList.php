@@ -70,10 +70,10 @@
                                                                     <i class="fas fa-edit"></i>
                                                                 </a> |
                                                                 <a onclick="return confirm('Bạn có muốn xoá danh mục này không?')" href="?delId=<?php echo $result['clb_id'] ?>">
-                                                                    <i class="fas fa-trash-alt"></i>
+                                                                    <i class="fas fa-trash-alt" style="color:red"></i>
                                                                 </a> |
-                                                                <a href="catAdd.php">
-                                                                    <i class="fas fa-plus-square"></i>
+                                                                <a href="clbAdd.php">
+                                                                    <i class="fas fa-plus-square" style="color:green"></i>
                                                                 </a>
                                                                 </td>
                                                             </tr>

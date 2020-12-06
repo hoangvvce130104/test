@@ -11,6 +11,13 @@
             <li class="menu-title">Navigation</li>
 
             <li>
+                <a href="scores.php" class="waves-effect waves-light">
+                    <i class="mdi mdi-calendar"></i>
+                    <span> Trang chủ </span>
+                </a>
+            </li>
+
+            <li>
                 <a href="javascript: void(0);" class="waves-effect waves-light">
                     <i class="mdi mdi-view-dashboard"></i>
                     <span class="badge badge-success badge-pill float-right">2</span>
@@ -32,10 +39,10 @@
                     <li><a href="catList.php"> Quản lý danh mục </a></li>
                     <li><a href="clbList.php"> Quản lý câu lạc bộ </a></li>
                     <li><a href="clbNew.php"> Quản lý tin tức </a></li>
+                    <li><a href="event.php">Quản lý sự kiện</a></li>
                 </ul>
             </li>
                 
-
             <li>
                 <a href="javascript: void(0);" class="waves-effect waves-light">
                     <i class="mdi mdi-layers"></i>
@@ -48,12 +55,12 @@
                 </ul>
             </li>
 
-                <!-- <li>
-                    <a href="calendar.html" class="waves-effect waves-light">
-                        <i class="mdi mdi-calendar"></i>
-                        <span> Calendar </span>
-                    </a>
-                </li> -->
+            <li>
+                <a href="scores.php" class="waves-effect waves-light">
+                    <i class="mdi mdi-calendar"></i>
+                    <span> Điểm thành viên </span>
+                </a>
+            </li>
 
                 <!-- <li>
                     <a href="javascript: void(0);" class="waves-effect waves-light">
