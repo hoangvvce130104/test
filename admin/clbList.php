@@ -1,8 +1,12 @@
 <?php include './inc/header.php';?>
 <?php include './inc/leftsidemenu.php';?>
 <?php include '../models/club.php';?>
+<?php include '../models/category.php';?>
+<?php include_once '../helper/format.php';?>
 <?php
-	$clb = new club();
+    $clb = new club();
+    $fm = new format();
+
 	if(isset ($_GET['delId'])){
 		$id = $_GET['delId'];
 		$delClb = $clb->del_club($id);
@@ -28,15 +32,17 @@
                 </div>
             </div>
             <div class="row">
-                            <div class="col-sm-11">
+                            <div class="col-md-12">
                                 <div class="card-box">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="demo-box">
-                                                <h4 class="header-title"> Danh sách </h4>
+                                                <a href="clbAdd.php">
+                                                    <i class="fas fa-plus-square" style="color:green"> Thêm CLB</i>
+                                                </a>
                                                 <div class="table-responsive">
                                                     <form action="" method="POST" enctype="multipart/form-data">
-                                                    <table class="table table-default col-sm-12 ">
+                                                    <table class="table col-sm-12 ">
                                                         <thead>
                                                         <?php
                                                             if(isset($delClb)){
@@ -45,11 +51,12 @@
                                                         ?> 
                                                             <tr>
                                                                 <th>#</th>
-                                                                <th>Tên câu lạc bộ</th>
+                                                                <th>Tên CLB</th>
                                                                 <th>Ảnh</th>
-                                                                <th>Số lượng</th>
-                                                                <th>Ngày thành lập</th>
+                                                                <th>SL</th>
+                                                                <th>Nội dung</th>
                                                                 <th>Danh mục</th>
+                                                                <th>Ngày thành lập</th>
                                                                 <th></th>
                                                             </tr>
                                                         </thead>
@@ -64,19 +71,21 @@
                                                             <tr>
                                                                 <th scope="row"><?php echo $i; ?></th>
                                                                 <td><?php echo $result['clbName']?></td>
-                                                                <td><?php echo $result['img']?></td>
+                                                                <td><img style="width:200px" src="uploads/<?php echo $result['img']?>"></td>
                                                                 <td><?php echo $result['quantity']?></td>
+                                                                <td>
+                                                                    <?php 
+                                                                    echo $fm->textShorten($result['content'], 50); 
+                                                                    ?>
+                                                                </td>
+                                                                <td><?php echo $result['catName']?></td>
                                                                 <td><?php echo $result['create_at']?></td>
-                                                                <td><?php echo $result['category_id']?></td>
                                                                 <td>
                                                                 <a href="clbEdit.php?clbId=<?php echo $result['clb_id'] ?>">
                                                                     <i class="fas fa-edit"></i>
                                                                 </a> |
                                                                 <a onclick="return confirm('Bạn có muốn xoá danh mục này không?')" href="?delId=<?php echo $result['clb_id'] ?>">
                                                                     <i class="fas fa-trash-alt" style="color:red"></i>
-                                                                </a> |
-                                                                <a href="clbAdd.php">
-                                                                    <i class="fas fa-plus-square" style="color:green"></i>
                                                                 </a>
                                                                 </td>
                                                             </tr>

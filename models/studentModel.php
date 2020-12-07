@@ -1,9 +1,8 @@
 <?php
 include '../lib/database.php';
 require_once('../lib/database.php');
-class StudentModel {
-    //private $my_array = array();
 
+class StudentModel {
     public function insertStudent($array)
     {
         $db = new Database;

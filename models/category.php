@@ -1,6 +1,6 @@
 <?php
-    include '../lib/database.php';
-    include '../helper/format.php';
+    include_once '../lib/database.php';
+    include_once '../helper/format.php';
 
     class category
     {
@@ -15,17 +15,14 @@
         public function insert_category($catName,$content,$img)
         {
             $catName = $this->fm->validation($catName);
-            $content = $this->fm->validation($content);
-    
             $catName = mysqli_real_escape_string($this->db->link, $catName);
-            $content = mysqli_real_escape_string($this->db->link, $content);
             
             if(empty($catName)){
                 $alert = '<div class="alert alert-warning">
                 <span><b> Danh mục không được trống </b></span></div>';
                 return $alert;
             }else{
-                $query = "INSERT INTO tbl_category(catName, content) VALUES('$catName', '$content')";
+                $query = "INSERT INTO tbl_category(catName) VALUES('$catName')";
                 $result = $this->db->insertdata($query);
                 if($result){
                     $alert = '<div class="alert alert-success">

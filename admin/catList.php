@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <!-- start page title -->
             <div class="row">
-                <div class="col-12">
+                <div class="col-10">
                     <div class="page-title-box">
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
@@ -29,7 +29,7 @@
             </div>
         
             <div class="row">
-                            <div class="col-sm-11">
+                            <div class="col-sm-10">
                                 <div class="card-box">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -47,8 +47,7 @@
                                                             <tr>
                                                                 <th>#</th>
                                                                 <th>Tên danh mục</th>
-                                                                <th>Nội dung</th>
-                                                                <th></th>
+                                                                <th>Hành động</th>
                                                             </tr>
                                                         </thead>
                                                         <?php
@@ -62,7 +61,6 @@
                                                             <tr>
                                                                 <th scope="row"><?php echo $i; ?></th>
                                                                 <td><?php echo $result['catName']?></td>
-                                                                <td><?php echo $result['content']?></td>
                                                                 <td>
                                                                     <a href="catEdit.php?catId=<?php echo $result['catId'] ?>">
                                                                         <i class="fas fa-edit"></i>

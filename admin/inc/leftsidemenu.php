@@ -11,7 +11,7 @@
             <li class="menu-title">Navigation</li>
 
             <li>
-                <a href="scores.php" class="waves-effect waves-light">
+                <a href="index.php" class="waves-effect waves-light">
                     <i class="mdi mdi-calendar"></i>
                     <span> Trang chủ </span>
                 </a>

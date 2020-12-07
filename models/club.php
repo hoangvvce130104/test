@@ -1,6 +1,6 @@
 <?php
-    include '../lib/database.php';
-    include '../helper/format.php';
+    include_once '../lib/database.php';
+    include_once '../helper/format.php';
 
     class club
     {
@@ -12,22 +12,30 @@
             $this->db = new Database();
             $this->fm = new Format();
         }
-        public function insert_club($clbName, $img, $quantity)
+        public function insert_club($data, $files)
         {
-            $clbName   = $this->fm->validation($clbName);
-            $img       = $this->fm->validation($img);
-            $quantity  = $this->fm->validation($quantity);
+            $clbName   = mysqli_real_escape_string($this->db->link, $data['clbName']);
+            $quantity  = mysqli_real_escape_string($this->db->link, $data['quantity']);
+            $content  = mysqli_real_escape_string($this->db->link, $data['content']);
+            $category  = mysqli_real_escape_string($this->db->link, $data['category']);
+            //Kiểm tra hình ảnh và lấy hình ảnh cho vào folder upload
+            $permited = array('jpg', 'jpeg', 'png' , 'gif');
+            $file_name = $_FILES['image'] ['name'];
+            $file_size = $_FILES['image'] ['size'];
+            $file_temp = $_FILES['image'] ['tmp_name'];
 
-            $clbName   = mysqli_real_escape_string($this->db->link, $clbName);
-            $img       = mysqli_real_escape_string($this->db->link, $img);
-            $quantity  = mysqli_real_escape_string($this->db->link, $quantity);
-    
-            if(empty($clbName)) {
+            $div = explode('.', $file_name);
+            $file_ext = strtolower(end($div));
+            $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+            $uploaded_image = "uploads/".$unique_image;
+
+            if($clbName == "" || $quantity == "" || $content == "" || $file_name == "" || $category == "") {
                 $alert = '<div class="alert alert-warning">
-                <span><b> Danh mục không được trống </b></span></div>';
+                <span><b> Các trường không được trống </b></span></div>';
                 return $alert;
             }else{
-                $query = "INSERT INTO tbl_caulacbo(clbName, img, quantity) VALUES('$clbName', '$img', '$quantity')";
+                move_uploaded_file($file_temp, $uploaded_image);
+                $query = "INSERT INTO tbl_caulacbo(clbName, quantity, content, img, catId) VALUES('$clbName', '$quantity', '$content', '$unique_image', '$category')";
                 $result = $this->db->insertdata($query);
                 if($result){
                     $alert = '<div class="alert alert-success">
@@ -42,7 +50,9 @@
         }
 
         public function show_club(){
-            $query  = "SELECT * FROM tbl_caulacbo ORDER BY clb_id DESC";
+            $query  = "SELECT tbl_caulacbo.*, tbl_category.catName 
+                       FROM tbl_caulacbo
+                       INNER JOIN tbl_category ON tbl_caulacbo.catId = tbl_category.catId";
             $result = $this->db->selectdata($query);
             return $result;
         }

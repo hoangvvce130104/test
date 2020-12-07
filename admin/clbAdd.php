@@ -1,14 +1,11 @@
 <?php include './inc/header.php';?>
 <?php include './inc/leftsidemenu.php';?>
 <?php include '../models/club.php';?>
-
+<?php include '../models/category.php';?>
 <?php
     $clb = new club();
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $clbName    = $_POST['clbName'];
-        $img        = $_POST['img'];
-        $quantity   = $_POST['quantity'];
-        $insertClb  = $clb->insert_club($clbName, $img, $quantity);
+        $insertClb  = $clb->insert_club($_POST, $_FILES);
     }
 ?>
 <div class="content-page">
@@ -37,15 +34,15 @@
                                     if(isset($insertClb)){
                                         echo $insertClb;
                                     }
-                                ?>
+                                ?>    
                                     <form id="basic-form" action="clbAdd.php" method="POST" enctype="multipart/form-data">
                                         <div>
                                             <h3></h3>
                                             <section>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="catName">Tên câu lạc bộ *</label>
+                                                    <label class="col-lg-2 control-label " for="clbName">Tên câu lạc bộ *</label>
                                                     <div class="col-lg-10">
-                                                        <input class="form-control required" name="clbName" type="text" placeholder="Thêm câu lạc bộ...">
+                                                        <input class="form-control required" name="clbName" type="text" placeholder="Thêm câu lạc bộ..." />
                                                     </div>
                                                 </div>
 
@@ -57,17 +54,24 @@
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="img">Ảnh</label>
+                                                    <label class="col-lg-2 control-label " for="content">Nội dung</label>
                                                     <div class="col-lg-10">
-                                                        <input class="form-control required" name="img" data-height="300" type="file">
+                                                        <input class="form-control required" name="content" type="text">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="content">Danh mục</label>
+                                                    <label class="col-lg-2 control-label " for="image">Ảnh</label>
+                                                    <div class="col-lg-10">
+                                                        <input class="form-control required" name="image" data-height="300" type="file" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-lg-2 control-label " for="category">Danh mục</label>
                                                     <div class="col-lg-10">
                                                         <select class="browser-default custom-select" id="select" name="category">
-                                                            <option>Chọn danh mục</option>
+                                                            <option>------Chọn danh mục------</option>
                                                             <?php
                                                                 $cat = new category();
                                                                 $catlist = $cat->show_category();
