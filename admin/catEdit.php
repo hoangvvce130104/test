@@ -10,9 +10,7 @@
     }
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $catName = $_POST['catName'];
-        $content = $_POST['content'];
-        $img = $_POST['img'];
-        $updateCat = $cat->update_category($catName, $id, $content, $img);
+        $updateCat = $cat->update_category($catName, $id);
     }
 ?>
 <div class="content-page">
@@ -55,20 +53,6 @@
                                                     <label class="col-lg-2 control-label " for="catName">Tên câu lạc bộ *</label>
                                                     <div class="col-lg-10">
                                                         <input class="form-control required" value="<?php echo $result['catName'] ?>" id="catName" name="catName" type="text">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="content">Nội dung *</label>
-                                                    <div class="col-lg-10">
-                                                        <input class="form-control required" value="<?php echo $result['content'] ?>" id="content" name="content" type="text">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="image" > Hình ảnh *</label>
-                                                    <div class="col-lg-10">
-                                                        <input type="file" class="dropify" name="img" data-height="300">
                                                     </div>
                                                 </div>
 

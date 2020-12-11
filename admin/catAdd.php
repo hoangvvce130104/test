@@ -5,9 +5,7 @@
     $cat = new category();
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $catName    = $_POST['catName'];
-        $content    = $_POST['content'];
-        $img        = $_POST['img'];
-        $insertCat  = $cat->insert_category($catName, $content, $img);
+        $insertCat  = $cat->insert_category($catName);
     }
 ?>
 <div class="content-page">
@@ -45,13 +43,6 @@
                                                     <label class="col-lg-2 control-label " for="catName">Tên danh mục </label>
                                                     <div class="col-lg-10">
                                                         <input class="form-control required" name="catName" type="text" placeholder="Thêm danh mục...">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-lg-2 control-label " for="content">Nội dung </label>
-                                                    <div class="col-lg-10">
-                                                        <input class="form-control required" name="content" type="text" placeholder="Nhập nội dung...">
                                                     </div>
                                                 </div>
 

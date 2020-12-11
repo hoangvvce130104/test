@@ -71,7 +71,7 @@
                                                             <tr>
                                                                 <th scope="row"><?php echo $i; ?></th>
                                                                 <td><?php echo $result['clbName']?></td>
-                                                                <td><img style="width:200px" src="uploads/<?php echo $result['img']?>"></td>
+                                                                <td><img style="width:150px" src="uploads/<?php echo $result['img']?>"></td>
                                                                 <td><?php echo $result['quantity']?></td>
                                                                 <td>
                                                                     <?php 

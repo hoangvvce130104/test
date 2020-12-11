@@ -66,11 +66,11 @@
                               <li class="login-modal">
                                  <a href="register.php" class="register"><i class="fa fa-user"></i>Đăng ký</a>
                               </li>
-                              <!-- <li>
+                              <li>
                                  <div class="cart-option">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i>Register</a>
+                                    <a href="loginuser.php"><i class="fa fa-user"></i>Đăng nhập</a>
                                  </div>
-                              </li> -->
+                              </li>
                            </ul>
                            <!-- end button section -->
                         </div>
@@ -95,12 +95,12 @@
                                     </div>
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                        <ul class="nav navbar-nav">
-                                          <li class="active"><a href="index.html">Home</a></li>
-                                          <li><a href="about.html">About</a></li>
-                                          <li><a href="team.html">Team</a></li>
-                                          <li><a href="news.html">News</a></li>
+                                          <li class="active"><a href="#">Trang chủ</a></li>
+                                          <li><a href="#">Giới thiệu</a></li>
+                                          <li><a href="#">Team</a></li>
+                                          <li><a href="#">Tin tức</a></li>
                                           <li class="dropdown mega-dropdown">
-                                             <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span class="caret"></span></a>				
+                                             <a href="match" class="dropdown-toggle" data-toggle="dropdown">Trận đấu<span class="caret"></span></a>				
                                              <ul class="dropdown-menu mega-dropdown-menu">
                                                 <li class="col-sm-8">
                                                    <ul>
@@ -149,8 +149,7 @@
                                                 </li>
                                              </ul>
                                           </li>
-                                          <li><a href="blog.html">Blog</a></li>
-                                          <li><a href="contact.html">contact</a></li>
+                                          <li><a href="#">Liên hệ</a></li>
                                        </ul>
                                     </div>
                                     <!-- /.nav-collapse -->

@@ -12,7 +12,7 @@
             $this->db = new Database();
             $this->fm = new Format();
         }
-        public function insert_category($catName,$content,$img)
+        public function insert_category($catName)
         {
             $catName = $this->fm->validation($catName);
             $catName = mysqli_real_escape_string($this->db->link, $catName);
@@ -48,12 +48,10 @@
             return $result;
         }
         
-        public function update_category($catName, $id, $content, $img){
+        public function update_category($catName, $id){
             $catName = $this->fm->validation($catName);
-            $content = $this->fm->validation($content);
             
             $catName = mysqli_real_escape_string($this->db->link, $catName);
-            $content = mysqli_real_escape_string($this->db->link, $content);
             $id = mysqli_real_escape_string($this->db->link, $id);
 
             if(empty($catName)){
@@ -61,7 +59,7 @@
                 <span><b> Danh mục không được trống </b></span></div>';
                 return $alert;
             }else{
-                $query = "UPDATE tbl_category SET catName = '$catName', content = '$content' WHERE catId = '$id' ";
+                $query = "UPDATE tbl_category SET catName = '$catName' WHERE catId = '$id' ";
                 $result = $this->db->update($query);
                 if($result){
                     $alert = '<div class="alert alert-success">
