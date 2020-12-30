@@ -61,7 +61,17 @@
                     <span> Điểm thành viên </span>
                 </a>
             </li>
-
+            <li>
+                <a href="javascript: void(0);" class="waves-effect waves-light">
+                    <i class="fa fa-calendar"></i>
+                    <span>Quản lý sự kiện </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li><a href="event.php">Sự kiện của trường</a></li>
+                    <li><a href="acceptStudent.php">Sự kiện của câu lạc bộ</a></li>
+                </ul>
+            </li>
                 <!-- <li>
                     <a href="javascript: void(0);" class="waves-effect waves-light">
                         <i class="mdi mdi-email"></i>

@@ -74,7 +74,7 @@
                                                     <label class="col-lg-2 control-label "> Hình ảnh </label>
                                                     <div class="col-lg-10">
                                                         <input type="file" class="form-control required" name="img" data-height="300" />
-                                                        <img style="width:150px; margin-top:20px;" src="uploads/<?php echo $resultCLB['img']?>">
+                                                        <img style="width:150px; margin-top:20px;" src="..uploads/<?php echo $resultCLB['img']?>">
                                                     </div>
                                                 </div>
 

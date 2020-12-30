@@ -70,9 +70,9 @@
             $category  = mysqli_real_escape_string($this->db->link, $data['category']);
             //Kiểm tra hình ảnh và lấy hình ảnh cho vào folder uploadcatId
             $permited = array('jpg', 'jpeg', 'png' , 'gif');
-            $file_name = $_FILES['image'] ['name'];
-            $file_size = $_FILES['image'] ['size'];
-            $file_temp = $_FILES['image'] ['tmp_name'];
+            $file_name = $_FILES['image']['name'];
+            $file_size = $_FILES['image']['size'];
+            $file_temp = $_FILES['image']['tmp_name'];
 
             $div = explode('.', $file_name);
             $file_ext = strtolower(end($div));
